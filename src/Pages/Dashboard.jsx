@@ -22,7 +22,7 @@ const Dashboard = () => {
   }, []);
 
   const fetchStudent = async () => {
-    const res = await axios.get("http://localhost:5000/students");
+    const res = await axios.get("https://mern-student-management-server.onrender.com/students");
     setStudents(res.data);
   };
 
