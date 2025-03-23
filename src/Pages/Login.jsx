@@ -12,11 +12,8 @@ const Login = () => {
     const handleLogin=async(e)=>{
         e.preventDefault();
       try{
-<<<<<<< HEAD
         const res=await axios.post("http://localhost:5040/login",{username,password})
-=======
-        const res=await axios.post("https://mern-student-management-server.onrender.com/login",{username,password})
->>>>>>> 000832442e074353f92b11671b582c82bf490f15
+
         if(res.data.token){
             localStorage.setItem("token",res.data.token);
             navigate("/dash")

@@ -18,11 +18,9 @@ const Add = () => {
 
     const fetchStudentData=async(id)=>{
       try{
-<<<<<<< HEAD
+
         const res= await axios.get(`http://localhost:5040/students/${id}`)
-=======
-        const res= await axios.get(`https://mern-student-management-server.onrender.com/students/${id}`)
->>>>>>> 000832442e074353f92b11671b582c82bf490f15
+  
         setStudentData(res.data)
       }catch(error){
         console.log(error)
@@ -31,11 +29,9 @@ const Add = () => {
 
     const handleSubmit=async(e)=>{
         e.preventDefault()
-<<<<<<< HEAD
+
         await axios.post("http://localhost:5040/student",studentData);
-=======
-        await axios.post("https://mern-student-management-server.onrender.com/student",studentData);
->>>>>>> 000832442e074353f92b11671b582c82bf490f15
+
         navigate("/manage")
     }
 

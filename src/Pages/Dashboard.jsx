@@ -22,11 +22,9 @@ const Dashboard = () => {
   }, []);
 
   const fetchStudent = async () => {
-<<<<<<< HEAD
+
     const res = await axios.get("http://localhost:5040/students");
-=======
-    const res = await axios.get("https://mern-student-management-server.onrender.com/students");
->>>>>>> 000832442e074353f92b11671b582c82bf490f15
+
     setStudents(res.data);
   };
 
