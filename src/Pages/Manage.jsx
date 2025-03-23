@@ -14,7 +14,11 @@ const Manage = () => {
 
     const fetchStudent=async()=>{
        try{
+<<<<<<< HEAD
         const res= await axios.get("http://localhost:5040/students")
+=======
+        const res= await axios.get("https://mern-student-management-server.onrender.com/students")
+>>>>>>> 000832442e074353f92b11671b582c82bf490f15
         setStudents(res.data)
        } catch(error){
         console.error("Error")
@@ -22,7 +26,11 @@ const Manage = () => {
     }
 
     const deleteStudent= async(id)=>{       
+<<<<<<< HEAD
             await axios.delete(`http://localhost:5040/students/${id}`)
+=======
+            await axios.delete(`https://mern-student-management-server.onrender.com/students/${id}`)
+>>>>>>> 000832442e074353f92b11671b582c82bf490f15
             fetchStudent()
     }
 
