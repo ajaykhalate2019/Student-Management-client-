@@ -18,7 +18,7 @@ const Add = () => {
 
     const fetchStudentData=async(id)=>{
       try{
-        const res= await axios.get(`http://localhost:5000/students/${id}`)
+        const res= await axios.get(`http://localhost:5040/students/${id}`)
         setStudentData(res.data)
       }catch(error){
         console.log(error)
@@ -27,7 +27,7 @@ const Add = () => {
 
     const handleSubmit=async(e)=>{
         e.preventDefault()
-        await axios.post("http://localhost:5000/student",studentData);
+        await axios.post("http://localhost:5040/student",studentData);
         navigate("/manage")
     }
 
@@ -61,8 +61,8 @@ const Add = () => {
             <option value="Female">Female</option>
         </select>
 
-        <button type="submit" className='bg-blue-500 p-2 rounded '>{studentId ? "Update Student":"Add Student"}</button>
-       </form>
+        <button type="submit" className='bg-blue-500 p-2 rounded cursor-pointer'>{studentId ? "Update Student":"Add Student"}</button>
+       </form>  
          
        </div>
     </div>

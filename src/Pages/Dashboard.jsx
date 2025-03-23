@@ -22,7 +22,7 @@ const Dashboard = () => {
   }, []);
 
   const fetchStudent = async () => {
-    const res = await axios.get("http://localhost:5000/students");
+    const res = await axios.get("http://localhost:5040/students");
     setStudents(res.data);
   };
 
@@ -41,13 +41,12 @@ const Dashboard = () => {
   console.log("Rendering with batchChartData:", batchChartData);
 
   const genderData = [
-    { name: "Male", 
-      value: students.filter((s) => s.gender === "Male").length },
+    { name: "Male", value: students.filter((s) => s.gender === "Male").length },
     {
       name: "Female",
       value: students.filter((s) => s.gender === "Female").length,
     },
-  ]; 
+  ];
 
   const COLORS = ["#4f46e5", "#e53e3e"];
 
@@ -93,6 +92,17 @@ const Dashboard = () => {
                 <Legend />
                 <Bar dataKey="students" fill="#4f46e5"></Bar>
               </BarChart>
+              {/* <BarChart data={batchChartData}>
+                <XAxis dataKey="batchYear" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="students" fill="#4f46e5">
+                  {batchChartData.map((entry, index) => (
+                    <Cell key={`batch-${index}`} fill="#4f46e5" />
+                  ))}
+                </Bar>
+              </BarChart> */}
             </ResponsiveContainer>
           </div>
 

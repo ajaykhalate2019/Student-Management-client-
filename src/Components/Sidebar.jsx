@@ -22,7 +22,7 @@ const Sidebar = () => {
         <li className='p-2 hover:bg-gray-700 rounded'>
             <Link to="/add" className='flex items-center'> <FaUserPlus className='mr-2'/> Add Student</Link>
         </li>     
-        <button onClick={handleLogout}className='flex items-center'><FaSignOutAlt className='mr-2'/> Logout</button>
+        <button onClick={handleLogout}className='flex items-center cursor-pointer'><FaSignOutAlt className='mr-2'/> Logout</button>
     </ul>
    
     </div>

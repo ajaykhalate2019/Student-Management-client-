@@ -14,7 +14,7 @@ const Manage = () => {
 
     const fetchStudent=async()=>{
        try{
-        const res= await axios.get("http://localhost:5000/students")
+        const res= await axios.get("http://localhost:5040/students")
         setStudents(res.data)
        } catch(error){
         console.error("Error")
@@ -22,7 +22,7 @@ const Manage = () => {
     }
 
     const deleteStudent= async(id)=>{       
-            await axios.delete(`http://localhost:5000/students/${id}`)
+            await axios.delete(`http://localhost:5040/students/${id}`)
             fetchStudent()
     }
 
@@ -58,8 +58,8 @@ const Manage = () => {
                     <td className='p-2'>{student.class}</td>
                     <td className='p-2'>{student.batchYear}</td>
                     <td className='p-2 flex space-x-2'>
-                        <button onClick={() => navigate(`/add?id=${student._id}`)}className='text-yellow-500'><FaEdit/></button>
-                        <button onClick={()=> deleteStudent(student._id)}className='text-red-500'><FaTrash/></button>
+                        <button onClick={() => navigate(`/add?id=${student._id}`)}className='text-yellow-500 cursor-pointer'><FaEdit/></button>
+                        <button onClick={()=> deleteStudent(student._id)}className='text-red-500 cursor-pointer'><FaTrash/></button>
                     </td>
                   </tr>
                 ))

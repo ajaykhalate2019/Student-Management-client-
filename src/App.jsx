@@ -4,7 +4,7 @@ import Add from './Pages/Add'
 import Manage from './Pages/Manage'
 import Dashboard from './Pages/Dashboard'
 import Login from './Pages/Login'
-import PV from './PV'
+import PV from './PV';
 function App() {
   
 
@@ -16,7 +16,7 @@ function App() {
         
         <Route path='/add' element={<Add/>} />
         <Route path='/manage' element={<Manage/>} />
-
+      
         <Route element={<PV/>}>
         <Route path='/dash' element={<Dashboard/>} />
         </Route>
