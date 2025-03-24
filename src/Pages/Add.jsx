@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const Add = () => {
     const[studentData,setStudentData]=useState({name:"",class:"",batchYear:"",gender:""})
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     const[searchParams,setSearchParams]=useSearchParams();
 
     const studentId=searchParams.get("id")
@@ -19,7 +19,7 @@ const Add = () => {
     const fetchStudentData=async(id)=>{
       try{
 
-        const res= await axios.get(`http://localhost:5040/students/${id}`)
+        const res= await axios.get(`https://student-management-server-qog1.onrender.com/${id}`)
   
         setStudentData(res.data)
       }catch(error){
@@ -30,7 +30,7 @@ const Add = () => {
     const handleSubmit=async(e)=>{
         e.preventDefault()
 
-        await axios.post("http://localhost:5040/student",studentData);
+        await axios.post("https://student-management-server-qog1.onrender.com",studentData);
 
         navigate("/manage")
     }
